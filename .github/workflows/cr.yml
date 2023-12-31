@@ -1,0 +1,22 @@
+name: Code Review # workflow 이름
+
+# 이 작업 동안에는 코드를 읽고 PR에 코멘트만 추가해주면 된다.
+permissions:
+  contents: read # 읽기 권한
+  pull-requests: write # PR에 코멘트 추가 권한
+
+on: # 언제 실행할지
+  pull_request: # PR이 올라오면
+    types: [ opened, reopened, synchronize ] # PR 생성 , 재생성 , 커밋같은 동기화 작업이 있을때
+
+jobs:
+  test:
+    # 만약 PR에 gpt review 라는 라벨이 붙어있을때만 실행하고 싶다면 아래와 같이 작성하면 된다.
+    if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 이 부분은 자동적으로 깃허브에서 생성되는 부분이기 때문에 따로 설정할 필요가 없다.
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # 여기서 secrets.등록한_키 이름을적어주면된다. 나는 API_KEY로 등록 했기 때문에 API_KEY로 작성했다.
+          LANGUAGE: Korean #한국어

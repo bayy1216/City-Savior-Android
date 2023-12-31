@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "399434643078",
+    "project_id": "citysavior-621b2",
+    "storage_bucket": "citysavior-621b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399434643078:android:a414d4629bb3bea7eec307",
+        "android_client_info": {
+          "package_name": "com.citysavior.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUj4cCnABCm4_-GH43rUmVJUBKBVoVOcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

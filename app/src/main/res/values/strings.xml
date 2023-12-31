@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CitySavior</string>
+    <string name="not_connected">네트워크가 원할하지 않습니다.</string>
+</resources>
